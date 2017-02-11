@@ -1,0 +1,44 @@
+html, body {
+    font-family: "Architects Daughter", sans-serif;
+    text-align: center;
+    min-width: 100%;
+    margin: 0;
+}
+
+
+.app {
+    position: relative;
+    display: flex;
+}
+
+
+.page {
+    display: flex;
+    min-width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page > nav {
+    display: flex;
+    background-color: #0C3B20;
+    line-height: 4em;
+    flex-direction: row;
+    min-width: 100%;
+}
+
+.page > nav > a {
+    flex-basis: calc(33.33% - 3em);
+    flex-grow: 1;
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    text-align: center;
+}
+
+
+
+#gallerybox {
+  display: flex;
+}
