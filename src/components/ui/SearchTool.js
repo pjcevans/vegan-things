@@ -41,7 +41,7 @@ class SearchTool extends Component {
     });
   }
 
-  tagFilter(filteredByTag) {
+  tagClickFilter(filteredByTag) {
     console.log("hi")
     this.setState({
       filteredRecipes: filteredByTag
@@ -54,12 +54,13 @@ class SearchTool extends Component {
     <div id="searchbox">
 
 
-      <TagMenu tagF={this.tagFilter.bind(this)}
-               fTag={this.filterByTag.bind(this)} />
+      <TagMenu tagClickFilter={this.tagClickFilter.bind(this)}
+               filterByTag={this.filterByTag.bind(this)}
+               recipes={this.state.filteredRecipes} />
       <div>
         <input type="text"
-               onChange={this.searchFilter.bind(this)}/>
-        <RecipeList recipes={this.state.filteredRecipes} func={this.searchFilter.bind(this)}/>
+               onChange={this.searchFilter.bind(this)} />
+        <RecipeList recipes={this.state.filteredRecipes} />
       </div>
 
     </div>
