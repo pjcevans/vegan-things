@@ -154,7 +154,7 @@
           "Salty"
         ],
         "recipesize": [
-          "snack",
+          "main",
           "side"
         ],
         "recipetype": [
@@ -370,6 +370,7 @@
           "Salty"
         ],
         "recipesize": [
+          "main",
           "snack",
           "side"
         ],
