@@ -8,10 +8,14 @@ class SearchTool extends Component {
   constructor(props) {
       super(props)
       this.state = {
-        search: "",
+        filteredRecipes: myData.items,
         typeSnack: this.filterByTag("recipesize", "snack"),
         typeMain: this.filterByTag("recipesize", "main"),
         typeSide: this.filterByTag("recipesize", "side")
+        // Solve the problem of manually setting these tag counts,
+        // they should update when a search is performed to show
+        // the narrowed down items. When they are clicked they should
+        // then further sort the searched items by which tag is clicked.
       }
   }
 
@@ -26,19 +30,22 @@ class SearchTool extends Component {
   }
 
   updateSearch(event) {
+    let newFilteredRecipes = myData.items.filter(
+      // this searches amongst the whole dataset every search
+      // whereas it should actually search based on which tags
+      // are selected. doh. Though actually many sites will reset
+      // tags on a new search anyway, so maybe leave it for now
+      (recipe) => {
+        return recipe.name.toLowerCase().indexOf(
+          event.target.value.substr(0,20).toLowerCase()) !== -1;
+        }
+    )
     this.setState({
-      search: event.target.value.substr(0,20)
-
+      filteredRecipes: newFilteredRecipes
     });
   }
 
   render() {
-    let filteredRecipes = myData.items.filter(
-      (recipe) => {
-        return recipe.name.toLowerCase().indexOf(
-          this.state.search.toLowerCase()) !== -1;
-      }
-    )
 
     return (
     <div id="searchbox">
@@ -57,7 +64,7 @@ class SearchTool extends Component {
         <input type="text"
                value={this.state.search}
                onChange={this.updateSearch.bind(this)}/>
-        <RecipeList recipes={filteredRecipes}/>
+        <RecipeList recipes={this.state.filteredRecipes}/>
       </div>
 
     </div>
