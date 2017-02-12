@@ -12,12 +12,12 @@ const MainMenu = () => {
             	}}>
             	Gallery
             </Link>
-            <Link to="testhome"
+            <Link to="search"
             	  activeStyle={{
             	  	backgroundColor: "white",
             	  	color: "slategray"
             	  }}>
-            	TestHome
+            	Search
            	</Link>
         </nav>
     )

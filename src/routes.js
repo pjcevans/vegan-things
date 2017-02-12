@@ -1,18 +1,16 @@
 import React from 'react'
 import { Router, Route, hashHistory } from 'react-router'
 import Home from './components/ui/Home'
-import About from './components/ui/About'
-import MemberList from './components/ui/MemberList'
-import TestHome from './components/ui/TestHome'
+import SearchPage from './components/ui/SearchPage'
 import Gallery from './components/ui/Gallery'
-import  { Left, Right, Whoops404  } from './components'
+import  { Main, Whoops404  } from './components'
 
 const routes = (
     <Router history={hashHistory}>
         <Route path="/" component={Home} />
 
-        <Route path="/" component={Right}>
-          <Route path="testhome" component={TestHome} />
+        <Route path="/" component={Main}>
+          <Route path="search" component={SearchPage} />
           <Route path="gallery" component={Gallery} />
         </Route>
 

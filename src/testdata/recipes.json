@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "recipe": "Fritters",
+      "name": "Fritters",
       "blurb": "It's a real tasty thingie! Possibly the blurb snippet could just be the first x characters of recipe text?",
       "id": 1,
       "date": "06/02/2017",
@@ -56,7 +56,7 @@
 
     },
     {
-      "recipe": "Nut Roast",
+      "name": "Nut Roast",
       "blurb": "It's a real tasty thingie! Possibly the blurb snippet could just be the first x characters of recipe text?",
       "id": 2,
       "date": "06/02/2017",
@@ -110,7 +110,7 @@
       }
     },
     {
-      "recipe": "Nut Roast",
+      "name": "Nut Roast",
       "blurb": "It's a real tasty thingie! Possibly the blurb snippet could just be the first x characters of recipe text?",
       "id": 3,
       "date": "06/02/2017",
@@ -164,7 +164,7 @@
       }
     },
     {
-      "recipe": "Nut Roast",
+      "name": "Nut Roast",
       "blurb": "It's a real tasty thingie! Possibly the blurb snippet could just be the first x characters of recipe text?",
       "id": 4,
       "date": "06/02/2017",
@@ -218,7 +218,7 @@
       }
     },
     {
-      "recipe": "Nut Roast",
+      "name": "Nut Roast",
       "blurb": "It's a real tasty thingie! Possibly the blurb snippet could just be the first x characters of recipe text?",
       "id": 5,
       "date": "06/02/2017",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "recipe": "Nut Roast",
+      "name": "Nut Roast",
       "blurb": "It's a real tasty thingie! Possibly the blurb snippet could just be the first x characters of recipe text?",
       "id": 6,
       "date": "06/02/2017",
@@ -326,7 +326,7 @@
       }
     },
     {
-      "recipe": "Nut Roast",
+      "name": "Nut Roast",
       "blurb": "It's a real tasty thingie! Possibly the blurb snippet could just be the first x characters of recipe text?",
       "id": 7,
       "date": "06/02/2017",
@@ -380,7 +380,7 @@
       }
     },
     {
-      "recipe": "Nut Roast",
+      "name": "Nut Roast",
       "blurb": "It's a real tasty thingie! Possibly the blurb snippet could just be the first x characters of recipe text?",
       "id": 8,
       "date": "06/02/2017",
@@ -434,7 +434,7 @@
       }
     },
     {
-      "recipe": "Nut Roast",
+      "name": "Nut Roast",
       "blurb": "It's a real tasty thingie! Possibly the blurb snippet could just be the first x characters of recipe text?",
       "id": 9,
       "date": "06/02/2017",

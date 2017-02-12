@@ -1,9 +1,6 @@
 import { Component } from 'react'
-import myData from '../../testdata/recipes.json';
 import Recipe from './Recipe'
 
-
-const data = myData.items
 
 class RecipeList extends Component {
     constructor(props) {
@@ -19,17 +16,17 @@ class RecipeList extends Component {
 
 
     render() {
-        // const { dataa } = this.state
+        // const { data } = this.state
         return (
             <div>
-            { (data) ? (
+            { (this.props.recipes) ? (
                 <div id="gallerybox">
-                  {data.map( item =>
+                  {this.props.recipes.map( item =>
                     <Recipe key={item.id} item={item} />
                   )}
                 </div>
             ) : (
-                <h1>No data currently loaded</h1>
+                <h1>No recipes found!</h1>
             )}
             </div>
 

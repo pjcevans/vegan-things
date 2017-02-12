@@ -14,10 +14,11 @@ html, body {
 
 .page {
     display: flex;
-    min-width: 100%;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    width: 1000px;
+    margin: 0 auto;
 }
 
 .page > nav {
@@ -37,8 +38,19 @@ html, body {
     text-align: center;
 }
 
-
-
 #gallerybox {
   display: flex;
+  flex-wrap: wrap;
+}
+
+#searchbox {
+  display: flex;
+}
+
+.reciperesult {
+margin: 10px;
+}
+
+#filterpane {
+  min-width: 15%;
 }

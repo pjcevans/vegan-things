@@ -1,15 +1,12 @@
 // import { Component } from 'react'
 
 const Recipe = (props) =>
-  <div>
+  <div className="reciperesult">
     {props.item.images.map( image =>
       (image.type === "main") ? (
-      <img src={image.url} height="120" width="120"/>
+      <img src={image.url} height="160" width="160"/>
     ) : undefined
     )}
-
-
-
     <h4>{props.item.recipe}</h4>
   </div>
 
