@@ -7,7 +7,7 @@ const Recipe = (props) =>
       <img src={image.url} height="160" width="160"/>
     ) : undefined
     )}
-    <h4>{props.item.recipe}</h4>
+    <h4>{props.item.name}</h4>
   </div>
 
 

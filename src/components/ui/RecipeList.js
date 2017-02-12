@@ -28,6 +28,8 @@ class RecipeList extends Component {
             ) : (
                 <h1>No recipes found!</h1>
             )}
+            <input type="text"
+                   onChange={this.props.func}/>
             </div>
 
         )

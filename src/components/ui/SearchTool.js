@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import RecipeList from './RecipeList'
+import TagMenu from './TagMenu'
 import myData from '../../testdata/recipes.json';
 
 
@@ -8,20 +9,15 @@ class SearchTool extends Component {
   constructor(props) {
       super(props)
       this.state = {
-        filteredRecipes: myData.items,
-        typeSnack: this.filterByTag("recipesize", "snack"),
-        typeMain: this.filterByTag("recipesize", "main"),
-        typeSide: this.filterByTag("recipesize", "side")
-        // Solve the problem of manually setting these tag counts,
-        // they should update when a search is performed to show
-        // the narrowed down items. When they are clicked they should
-        // then further sort the searched items by which tag is clicked.
+        filteredRecipes: myData.items
       }
   }
 
-  filterByTag(type, tag) {
-    // if filtering by just type (no tag provided) use [this code] instead
-    let filteredRecipes = myData.items.filter(
+  filterByTag(type, tag, data) {
+    // - takes tag details and a dataset to work with, uses the full
+    // dataset as a default value (for initial display of values
+    // - If filtering by just type (no tag provided) use [this code] instead
+    let filteredRecipes = this.state.filteredRecipes.filter(
       (recipe) => {
         return recipe.tags[type].indexOf(tag) > -1
       }
@@ -29,7 +25,7 @@ class SearchTool extends Component {
     return filteredRecipes
   }
 
-  updateSearch(event) {
+  searchFilter(event) {
     let newFilteredRecipes = myData.items.filter(
       // this searches amongst the whole dataset every search
       // whereas it should actually search based on which tags
@@ -45,26 +41,25 @@ class SearchTool extends Component {
     });
   }
 
+  tagFilter(filteredByTag) {
+    console.log("hi")
+    this.setState({
+      filteredRecipes: filteredByTag
+    });
+  }
+
   render() {
 
     return (
     <div id="searchbox">
 
-      <div id="filterpane">
-        <p>Filter your results:</p>
-        <p>Type of meal</p>
-        <ul>
-          <li>Snack ({this.state.typeSnack.length})</li>
-          <li>Main ({this.state.typeMain.length})</li>
-          <li>Side ({this.state.typeSide.length})</li>
-        </ul>
-      </div>
 
+      <TagMenu tagF={this.tagFilter.bind(this)}
+               fTag={this.filterByTag.bind(this)} />
       <div>
         <input type="text"
-               value={this.state.search}
-               onChange={this.updateSearch.bind(this)}/>
-        <RecipeList recipes={this.state.filteredRecipes}/>
+               onChange={this.searchFilter.bind(this)}/>
+        <RecipeList recipes={this.state.filteredRecipes} func={this.searchFilter.bind(this)}/>
       </div>
 
     </div>
@@ -73,3 +68,8 @@ class SearchTool extends Component {
 }
 
 export default SearchTool
+
+
+        // for (var prop in obj) {
+        //   console.log('obj.' + prop, '=', obj[prop]);
+        // }
