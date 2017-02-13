@@ -8,10 +8,13 @@ import myData from '../../testdata/recipes.json';
 class SearchTool extends Component {
   constructor(props) {
       super(props)
+      this.previousState = myData.items;
       this.state = {
         filteredRecipes: myData.items
       }
   }
+
+
 
   filterByTag(type, tag, data) {
     // - takes tag details and a dataset to work with, uses the full
@@ -41,8 +44,8 @@ class SearchTool extends Component {
     });
   }
 
-  tagClickFilter(filteredByTag) {
-    console.log("hi")
+  tagClickFilter(filteredByTag = this.previousState) {
+    this.previousState = this.state.filteredRecipes;
     this.setState({
       filteredRecipes: filteredByTag
     });

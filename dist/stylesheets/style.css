@@ -54,3 +54,7 @@ margin: 10px;
 #filterpane {
   min-width: 15%;
 }
+
+.tagtype:first-letter {
+  text-transform: capitalize;
+}

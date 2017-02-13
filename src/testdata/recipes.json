@@ -40,15 +40,15 @@
         "Step 5"
       ],
       "tags": {
-        "recipetaste": [
+        "taste": [
           "Sweet",
           "Salty"
         ],
-        "recipesize": [
+        "size": [
           "snack",
           "side"
         ],
-        "recipetype": [
+        "type": [
           "breakfast",
           "snack"
         ]
@@ -95,15 +95,15 @@
         "Step 5"
       ],
       "tags": {
-        "recipetaste": [
+        "taste": [
           "Sweet",
           "Salty"
         ],
-        "recipesize": [
+        "size": [
           "snack",
           "side"
         ],
-        "recipetype": [
+        "type": [
           "breakfast",
           "snack"
         ]
@@ -149,15 +149,15 @@
         "Step 5"
       ],
       "tags": {
-        "recipetaste": [
+        "taste": [
           "Sweet",
           "Salty"
         ],
-        "recipesize": [
+        "size": [
           "main",
           "side"
         ],
-        "recipetype": [
+        "type": [
           "breakfast",
           "snack"
         ]
@@ -203,15 +203,15 @@
         "Step 5"
       ],
       "tags": {
-        "recipetaste": [
+        "taste": [
           "Sweet",
           "Salty"
         ],
-        "recipesize": [
+        "size": [
           "snack",
           "side"
         ],
-        "recipetype": [
+        "type": [
           "breakfast",
           "snack"
         ]
@@ -257,15 +257,15 @@
         "Step 5"
       ],
       "tags": {
-        "recipetaste": [
+        "taste": [
           "Sweet",
           "Salty"
         ],
-        "recipesize": [
+        "size": [
           "snack",
           "side"
         ],
-        "recipetype": [
+        "type": [
           "breakfast",
           "snack"
         ]
@@ -311,15 +311,15 @@
         "Step 5"
       ],
       "tags": {
-        "recipetaste": [
+        "taste": [
           "Sweet",
           "Salty"
         ],
-        "recipesize": [
+        "size": [
           "snack",
           "side"
         ],
-        "recipetype": [
+        "type": [
           "breakfast",
           "snack"
         ]
@@ -365,16 +365,16 @@
         "Step 5"
       ],
       "tags": {
-        "recipetaste": [
+        "taste": [
           "Sweet",
           "Salty"
         ],
-        "recipesize": [
+        "size": [
           "main",
           "snack",
           "side"
         ],
-        "recipetype": [
+        "type": [
           "breakfast",
           "snack"
         ]
@@ -420,15 +420,15 @@
         "Step 5"
       ],
       "tags": {
-        "recipetaste": [
+        "taste": [
           "Sweet",
           "Salty"
         ],
-        "recipesize": [
+        "size": [
           "snack",
           "side"
         ],
-        "recipetype": [
+        "type": [
           "breakfast",
           "snack"
         ]
@@ -474,15 +474,15 @@
         "Step 5"
       ],
       "tags": {
-        "recipetaste": [
+        "taste": [
           "Sweet",
           "Salty"
         ],
-        "recipesize": [
+        "size": [
           "snack",
           "side"
         ],
-        "recipetype": [
+        "type": [
           "breakfast",
           "snack"
         ]

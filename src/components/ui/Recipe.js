@@ -2,9 +2,9 @@
 
 const Recipe = (props) =>
   <div className="reciperesult">
-    {props.item.images.map( image =>
+    {props.item.images.map( (image, id) =>
       (image.type === "main") ? (
-      <img src={image.url} height="160" width="160"/>
+      <img key={id} src={image.url} height="160" width="160"/>
     ) : undefined
     )}
     <h4>{props.item.name}</h4>
