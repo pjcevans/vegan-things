@@ -10,7 +10,9 @@ class SearchTool extends Component {
       super(props)
       this.previousState = myData.items;
       this.state = {
-        filteredRecipes: myData.items
+        filteredRecipes: myData.items,
+        filterTags: [],
+        filterSearchTerm: ""
       }
   }
 
@@ -50,6 +52,11 @@ class SearchTool extends Component {
       filteredRecipes: filteredByTag
     });
   }
+
+
+
+
+
 
   render() {
 
