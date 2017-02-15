@@ -41,8 +41,8 @@
       ],
       "tags": {
         "taste": [
-          "Sweet",
-          "Salty"
+          "sweet",
+          "salty"
         ],
         "size": [
           "snack",
@@ -50,7 +50,7 @@
         ],
         "type": [
           "breakfast",
-          "snack"
+          "lunch"
         ]
       }
 
@@ -96,8 +96,8 @@
       ],
       "tags": {
         "taste": [
-          "Sweet",
-          "Salty"
+          "sweet",
+          "salty"
         ],
         "size": [
           "snack",
@@ -105,7 +105,7 @@
         ],
         "type": [
           "breakfast",
-          "snack"
+          "lunch"
         ]
       }
     },
@@ -150,8 +150,8 @@
       ],
       "tags": {
         "taste": [
-          "Sweet",
-          "Salty"
+          "sweet",
+          "salty"
         ],
         "size": [
           "main",
@@ -159,7 +159,7 @@
         ],
         "type": [
           "breakfast",
-          "snack"
+          "drink"
         ]
       }
     },
@@ -204,8 +204,8 @@
       ],
       "tags": {
         "taste": [
-          "Sweet",
-          "Salty"
+          "sweet",
+          "salty"
         ],
         "size": [
           "snack",
@@ -213,7 +213,7 @@
         ],
         "type": [
           "breakfast",
-          "snack"
+          "lunch"
         ]
       }
     },
@@ -258,8 +258,8 @@
       ],
       "tags": {
         "taste": [
-          "Sweet",
-          "Salty"
+          "sweet",
+          "salty"
         ],
         "size": [
           "snack",
@@ -267,7 +267,7 @@
         ],
         "type": [
           "breakfast",
-          "snack"
+          "dinner"
         ]
       }
     },
@@ -312,8 +312,8 @@
       ],
       "tags": {
         "taste": [
-          "Sweet",
-          "Salty"
+          "sweet",
+          "salty"
         ],
         "size": [
           "snack",
@@ -321,7 +321,7 @@
         ],
         "type": [
           "breakfast",
-          "snack"
+          "lunch"
         ]
       }
     },
@@ -366,8 +366,8 @@
       ],
       "tags": {
         "taste": [
-          "Sweet",
-          "Salty"
+          "sweet",
+          "salty"
         ],
         "size": [
           "main",
@@ -376,7 +376,7 @@
         ],
         "type": [
           "breakfast",
-          "snack"
+          "lunch"
         ]
       }
     },
@@ -421,8 +421,8 @@
       ],
       "tags": {
         "taste": [
-          "Sweet",
-          "Salty"
+          "sweet",
+          "salty"
         ],
         "size": [
           "snack",
@@ -430,7 +430,7 @@
         ],
         "type": [
           "breakfast",
-          "snack"
+          "lunch"
         ]
       }
     },
@@ -475,8 +475,8 @@
       ],
       "tags": {
         "taste": [
-          "Sweet",
-          "Salty"
+          "sweet",
+          "salty"
         ],
         "size": [
           "snack",
@@ -484,7 +484,7 @@
         ],
         "type": [
           "breakfast",
-          "snack"
+          "lunch"
         ]
       }
     }

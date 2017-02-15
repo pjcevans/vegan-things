@@ -39,10 +39,17 @@ class TagMenu extends Component {
       // For every menu header & item, populate components
       rows.push(<TagCategoryRow key={key} name={key} />);
       tagRows[key].forEach((item) => {
+        var status = "normal";
+        if (this.props.filterTags.indexOf(item) > -1) {
+          var status = "clicked";
+        }
         rows.push(<TagRow key={key + item}
+                          category={key}
                           item={item}
+                          clicked={status}
                           tagClickFilter={this.props.tagClickFilter}
-                          filterByTag={this.props.filterByTag} />);
+                          filterByTag={this.props.filterByTag}
+                          toggleTagFilter={this.props.toggleTagFilter} />);
       });
     }
 

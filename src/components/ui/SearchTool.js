@@ -8,7 +8,6 @@ import myData from '../../testdata/recipes.json';
 class SearchTool extends Component {
   constructor(props) {
       super(props)
-      this.previousState = myData.items;
       this.state = {
         filteredRecipes: myData.items,
         filterTags: [],
@@ -46,8 +45,20 @@ class SearchTool extends Component {
     });
   }
 
-  tagClickFilter(filteredByTag = this.previousState) {
-    this.previousState = this.state.filteredRecipes;
+  toggleTagFilter(tag) {
+    // Remove tag from list if already present on click
+    var index = this.state.filterTags.indexOf(tag)
+    if (index > -1) { // if tag is in tag list already
+      var newTagData = this.state.filterTags.slice()
+      newTagData.splice(index, 1);
+    } else {
+      var newTagData = this.state.filterTags.slice()
+      newTagData.push(tag)
+    }
+    this.setState({filterTags: newTagData});
+  }
+
+  tagClickFilter(filteredByTag) {
     this.setState({
       filteredRecipes: filteredByTag
     });
@@ -66,11 +77,14 @@ class SearchTool extends Component {
 
       <TagMenu tagClickFilter={this.tagClickFilter.bind(this)}
                filterByTag={this.filterByTag.bind(this)}
-               recipes={this.state.filteredRecipes} />
+               recipes={this.state.filteredRecipes}
+               filterTags={this.state.filterTags}
+               toggleTagFilter={this.toggleTagFilter.bind(this)} />
       <div>
         <input type="text"
                onChange={this.searchFilter.bind(this)} />
-        <RecipeList recipes={this.state.filteredRecipes} />
+        <RecipeList recipes={this.state.filteredRecipes}
+                    filterTags={this.state.filterTags} />
       </div>
 
     </div>

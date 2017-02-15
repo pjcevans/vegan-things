@@ -58,3 +58,11 @@ margin: 10px;
 .tagtype:first-letter {
   text-transform: capitalize;
 }
+
+.normal {
+  color: blue;
+}
+
+.clicked {
+  color: yellow;
+}

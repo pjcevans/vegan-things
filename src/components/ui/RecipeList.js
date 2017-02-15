@@ -20,6 +20,7 @@ class RecipeList extends Component {
 
         return (
             <div>
+              <p> Filtering by: {JSON.stringify(this.props.filterTags)} </p>
             { (this.props.recipes) ? (
                 <div id="gallerybox">
                   {this.props.recipes.map( item =>

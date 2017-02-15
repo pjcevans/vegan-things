@@ -1,11 +1,12 @@
 const TagRow = (props) =>
   <tr>
-    <td className="tagtype">{props.item}</td>
+    <td className="tagtype"><a className={props.clicked} onClick={() => props.toggleTagFilter(props.item)}>{props.item} ({props.filterByTag(props.category, props.item).length})</a></td>
     <td><input type="checkbox"></input></td>
   </tr>
 
 export default TagRow
 
+// all hovers for filters should be point-selectors
 
 // Implement checkbox filtering. Checkboxes should be
 // clickable to add a filter. Ideally we can stack
