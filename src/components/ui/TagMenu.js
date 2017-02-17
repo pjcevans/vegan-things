@@ -2,6 +2,10 @@ import { Component } from 'react'
 import TagCategoryRow from './TagCategoryRow'
 import TagRow from './TagRow'
 import TagFilterItem from './TagFilterItem'
+import TagClearAll from './TagClearAll'
+import TagClearSearch from './TagClearSearch'
+
+
 
 
 class TagMenu extends Component {
@@ -56,15 +60,28 @@ class TagMenu extends Component {
     }
 
     this.props.filterTags.forEach((tag) =>  {
-      console.log(tag)
       selectedTags.push(<TagFilterItem key={tag}
                                        item={tag}
                                        toggleTagFilter={this.props.toggleTagFilter} />);
     });
-    console.log(selectedTags)
     return (
       <div id="filterpane">
-        <div id="filtertagsbox">
+
+        { (this.props.filterTags.length > 0 ||
+          this.props.searchTerm) ? (
+            <TagClearAll clearAllTagsAndSearch={this.props.clearAllTagsAndSearch}/>
+        ) : (
+            <div></div>
+        )}
+
+        { (this.props.searchTerm) ? (
+            <TagClearSearch clearSearch={this.props.clearSearch}
+                            searchTerm={this.props.searchTerm} />
+        ) : (
+            <div></div>
+        )}
+
+        <div className="filtertagsbox">
         {selectedTags}
         </div>
         <table>

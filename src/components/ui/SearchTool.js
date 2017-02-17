@@ -73,11 +73,11 @@ class SearchTool extends Component {
 
   updateGallery(newTagData = this.state.filterTags) {
     // Filter based on search
+    // Heavy on resources, reloading full data here each call,
+    // regardless of whether we're using filtered data
     var newSeachedRecipes = myData.items;
 
     if (this.state.searchTerm) {
-      console.log(this.state.searchTerm)
-      console.log("AAAAH WE'RE SEARCHING ON FIRE")
       newSeachedRecipes = newSeachedRecipes.filter(
         (recipe) => {
           return recipe.name.toLowerCase().indexOf(
@@ -115,7 +115,24 @@ class SearchTool extends Component {
     });
   }
 
+  clearAllTagsAndSearch() {
+    // Currently default searchbox input text is set based on state
+    // We should instead be using redux to make the processes more repeatable
+    // instead of defining per-item behaviour using state
+    this.setState({
+      filterTags: [],
+      searchTerm: ""
+    }, () => {
+      this.updateGallery();
+    });  }
 
+  clearSearch() {
+    this.setState({
+      searchTerm: ""
+    }, () => {
+      this.updateGallery();
+    });
+  }
 
 
 
@@ -128,9 +145,14 @@ class SearchTool extends Component {
                filterByTag={this.filterByTag.bind(this)}
                recipes={this.state.filteredRecipes}
                filterTags={this.state.filterTags}
-               toggleTagFilter={this.toggleTagFilter.bind(this)} />
+               searchTerm={this.state.searchTerm}
+               toggleTagFilter={this.toggleTagFilter.bind(this)}
+               clearSearch={this.clearSearch.bind(this)}
+               clearAllTagsAndSearch={this.clearAllTagsAndSearch.bind(this)} />
       <div id="rightcontent">
         <input type="text"
+               id="searchbar"
+               value={this.state.searchTerm}
                onChange={this.searchFilter.bind(this)} />
         <RecipeList recipes={this.state.filteredRecipes}
                     filterTags={this.state.filterTags}

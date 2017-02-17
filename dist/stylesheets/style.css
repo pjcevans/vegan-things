@@ -58,7 +58,7 @@ margin: 10px;
 }
 
 #filterpane {
-  min-width: 15%;
+  min-width: 20%;
   max-width: 20%;
 }
 
@@ -74,12 +74,12 @@ margin: 10px;
   color: black;
 }
 
-#filtertagsbox {
+.filtertagsbox {
   display: flex;
   flex-wrap: wrap;
 }
 
-#filtertagsbox > p {
+.filtertagsbox > p {
   margin: 1px;
   border: thin dotted green;
 }
