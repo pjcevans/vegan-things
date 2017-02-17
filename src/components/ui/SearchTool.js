@@ -18,15 +18,30 @@ class SearchTool extends Component {
 
 
   filterByTag(tag, data = this.state.filteredRecipes) {
+    // Having each component call this function to see how many recipes
+    // exist within each tag is remarkably slow as we have to filter data each
+    // time, it would be much faster if this information was computed as data
+    // in the containing component as standard and simply passed down as data
+    // to display - otherwise a component lower in the heirarchy is throwing
+    // data back up the chain, instead of the top level component passing down
+    // all required data.
+    //
     // - If filtering by just type (no tag provided) use [this code] instead
     let filteredRecipes = data.filter(
       (recipe) => {
+        let match = false;
         for (var key in recipe.tags) {
-          return recipe.tags[key].indexOf(tag);
+          console.log(recipe.tags[key], tag)
+          console.log(recipe.tags[key].indexOf(tag) > -1)
+
+          if (recipe.tags[key].indexOf(tag) > -1) {
+            match = true;
+          }
           // recipe.tags[key].forEach((type) => {
           //   return indexOf(tag) > -1
           // });
         }
+        return match;
     });
     return filteredRecipes
   }

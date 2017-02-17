@@ -376,7 +376,8 @@
         ],
         "type": [
           "breakfast",
-          "lunch"
+          "lunch",
+          "dinner"
         ]
       }
     },
@@ -429,7 +430,6 @@
           "side"
         ],
         "type": [
-          "breakfast",
           "lunch"
         ]
       }
@@ -484,7 +484,7 @@
         ],
         "type": [
           "breakfast",
-          "lunch"
+          "drink"
         ]
       }
     }
