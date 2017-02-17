@@ -1,7 +1,6 @@
 const TagFilterItem = (props) =>
-  <p><a className={props.clicked}
-        onClick={() => props.toggleTagFilter(props.item)}>
-          {props.item}</a>  
+  <p><a onClick={() => props.toggleTagFilter(props.item)}>
+          {props.item} <span className="close">x</span></a>
   </p>
 
 export default TagFilterItem

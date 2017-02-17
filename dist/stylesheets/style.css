@@ -21,6 +21,11 @@ html, body {
     margin: 0 auto;
 }
 
+.page > div {
+  width: 1000px;
+  margin: 0 auto;
+}
+
 .page > nav {
     display: flex;
     background-color: #0C3B20;
@@ -41,6 +46,7 @@ html, body {
 #gallerybox {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 #searchbox {
@@ -53,6 +59,7 @@ margin: 10px;
 
 #filterpane {
   min-width: 15%;
+  max-width: 20%;
 }
 
 .tagtype:first-letter {
@@ -64,5 +71,23 @@ margin: 10px;
 }
 
 .clicked {
-  color: yellow;
+  color: black;
+}
+
+#filtertagsbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#filtertagsbox > p {
+  margin: 1px;
+  border: thin dotted green;
+}
+
+.close {
+  color: red;
+}
+
+#rightcontent {
+  flex-grow: 1;
 }

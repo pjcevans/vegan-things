@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import TagCategoryRow from './TagCategoryRow'
 import TagRow from './TagRow'
+import TagFilterItem from './TagFilterItem'
+
 
 class TagMenu extends Component {
   constructor(props) {
@@ -53,10 +55,18 @@ class TagMenu extends Component {
       });
     }
 
-    // this.props.filterTags.forEach((tag) => console.log(tag));
-    console.log(this.props.filterTags)
+    this.props.filterTags.forEach((tag) =>  {
+      console.log(tag)
+      selectedTags.push(<TagFilterItem key={tag}
+                                       item={tag}
+                                       toggleTagFilter={this.props.toggleTagFilter} />);
+    });
+    console.log(selectedTags)
     return (
       <div id="filterpane">
+        <div id="filtertagsbox">
+        {selectedTags}
+        </div>
         <table>
           <thead>
             <tr>

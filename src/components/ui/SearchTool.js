@@ -31,8 +31,6 @@ class SearchTool extends Component {
       (recipe) => {
         let match = false;
         for (var key in recipe.tags) {
-          console.log(recipe.tags[key], tag)
-          console.log(recipe.tags[key].indexOf(tag) > -1)
 
           if (recipe.tags[key].indexOf(tag) > -1) {
             match = true;
@@ -131,7 +129,7 @@ class SearchTool extends Component {
                recipes={this.state.filteredRecipes}
                filterTags={this.state.filterTags}
                toggleTagFilter={this.toggleTagFilter.bind(this)} />
-      <div>
+      <div id="rightcontent">
         <input type="text"
                onChange={this.searchFilter.bind(this)} />
         <RecipeList recipes={this.state.filteredRecipes}
