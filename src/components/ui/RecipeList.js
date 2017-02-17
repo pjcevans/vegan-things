@@ -1,30 +1,13 @@
-import { Component } from 'react'
+// import { Component } from 'react'
 import Recipe from './Recipe'
 
 
-class RecipeList extends Component {
-    constructor(props) {
-        super(props)
-        // this.state = {}
-    }
+const RecipeList = (props) =>
 
-    componentDidMount() {
-      // this.setState({
-      //   data: myData.items
-      // })
-    }
-
-
-    render() {
-        // const { data } = this.state
-
-        return (
             <div>
-              <p> Filtering by: {JSON.stringify(this.props.filterTags)} </p>
-              <p> Searching for: {this.props.searchTerm} </p>
-            { (this.props.recipes) ? (
+            { (props.recipes) ? (
                 <div id="gallerybox">
-                  {this.props.recipes.map( item =>
+                  {props.recipes.map( item =>
                     <Recipe key={item.id} item={item} />
                   )}
                 </div>
@@ -33,8 +16,5 @@ class RecipeList extends Component {
             )}
             </div>
 
-        )
-   }
-}
 
 export default RecipeList

@@ -4,7 +4,6 @@ const TagRow = (props) =>
                                onClick={() => props.toggleTagFilter(props.item)}>
                                {props.item} ({props.filterByTag(props.item).length})
                             </a></td>
-    <td><input type="checkbox"></input></td>
   </tr>
 
 export default TagRow
