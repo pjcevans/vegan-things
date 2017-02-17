@@ -11,41 +11,36 @@ class SearchTool extends Component {
       this.state = {
         filteredRecipes: myData.items,
         filterTags: [],
-        filterSearchTerm: ""
+        searchTerm: ""
       }
   }
 
 
 
-  filterByTag(type, tag, data) {
-    // - takes tag details and a dataset to work with, uses the full
-    // dataset as a default value (for initial display of values
+  filterByTag(tag, data = this.state.filteredRecipes) {
     // - If filtering by just type (no tag provided) use [this code] instead
-    let filteredRecipes = this.state.filteredRecipes.filter(
+    let filteredRecipes = data.filter(
       (recipe) => {
-        return recipe.tags[type].indexOf(tag) > -1
-      }
-    )
+        for (var key in recipe.tags) {
+          return recipe.tags[key].indexOf(tag);
+          // recipe.tags[key].forEach((type) => {
+          //   return indexOf(tag) > -1
+          // });
+        }
+    });
     return filteredRecipes
   }
 
   searchFilter(event) {
-    let newFilteredRecipes = myData.items.filter(
-      // this searches amongst the whole dataset every search
-      // whereas it should actually search based on which tags
-      // are selected. doh. Though actually many sites will reset
-      // tags on a new search anyway, so maybe leave it for now
-      (recipe) => {
-        return recipe.name.toLowerCase().indexOf(
-          event.target.value.substr(0,20).toLowerCase()) !== -1;
-        }
-    )
     this.setState({
-      filteredRecipes: newFilteredRecipes
+      searchTerm: event.target.value.substr(0,20).toLowerCase(),
+    }, () => {
+      this.updateGallery();
     });
   }
 
   toggleTagFilter(tag) {
+
     // Remove tag from list if already present on click
     var index = this.state.filterTags.indexOf(tag)
     if (index > -1) { // if tag is in tag list already
@@ -55,7 +50,50 @@ class SearchTool extends Component {
       var newTagData = this.state.filterTags.slice()
       newTagData.push(tag)
     }
-    this.setState({filterTags: newTagData});
+    this.updateGallery(newTagData);
+    // this.setState({
+    //   filterTags: newTagData
+    // }, () => {
+    //   this.updateGallery();
+    // });
+  }
+
+  updateGallery(newTagData = this.state.filterTags) {
+    // Filter based on search
+    var newSeachedRecipes = myData.items;
+
+    if (this.state.searchTerm) {
+      console.log(this.state.searchTerm)
+      console.log("AAAAH WE'RE SEARCHING ON FIRE")
+      newSeachedRecipes = newSeachedRecipes.filter(
+        (recipe) => {
+          return recipe.name.toLowerCase().indexOf(
+              this.state.searchTerm) !== -1;
+          }
+      )
+    }
+    // solve the problem that after searching is finished, we dont get the full list
+
+    // Further filter the current dataset based on each tag
+    // If updateGallery is called with updated tag data
+    if (newTagData.length !== 0) {
+      newTagData.forEach((tag) => {
+        newSeachedRecipes = this.filterByTag(tag, newSeachedRecipes);
+      });
+    }
+    // else { // Or using existing selected tags if not called with updated tag data
+    //   if (this.state.filterTags.length !== 0) {
+    //     this.state.filterTags.forEach((tag) => {
+    //       newSeachedRecipes = this.filterByTag(tag, newSeachedRecipes);
+    //     });
+    //   }
+    // }
+
+
+    this.setState({
+      filterTags: newTagData,
+      filteredRecipes: newSeachedRecipes
+    });
   }
 
   tagClickFilter(filteredByTag) {
@@ -73,8 +111,6 @@ class SearchTool extends Component {
 
     return (
     <div id="searchbox">
-
-
       <TagMenu tagClickFilter={this.tagClickFilter.bind(this)}
                filterByTag={this.filterByTag.bind(this)}
                recipes={this.state.filteredRecipes}
@@ -84,7 +120,8 @@ class SearchTool extends Component {
         <input type="text"
                onChange={this.searchFilter.bind(this)} />
         <RecipeList recipes={this.state.filteredRecipes}
-                    filterTags={this.state.filterTags} />
+                    filterTags={this.state.filterTags}
+                    searchTerm={this.state.searchTerm} />
       </div>
 
     </div>

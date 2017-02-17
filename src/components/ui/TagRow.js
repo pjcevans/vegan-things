@@ -1,6 +1,9 @@
 const TagRow = (props) =>
   <tr>
-    <td className="tagtype"><a className={props.clicked} onClick={() => props.toggleTagFilter(props.item)}>{props.item} ({props.filterByTag(props.category, props.item).length})</a></td>
+    <td className="tagtype"><a className={props.clicked}
+                               onClick={() => props.toggleTagFilter(props.item)}>
+                               {props.item} ({props.filterByTag(props.item).length})
+                            </a></td>
     <td><input type="checkbox"></input></td>
   </tr>
 

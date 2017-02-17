@@ -13,6 +13,7 @@ class TagMenu extends Component {
     var rows = [];
     var tagTypes = [];
     var tagRows = {};
+    var selectedTags = [];
     this.props.recipes.forEach((recipe) => {
       // Populate a list of tag types
       for (var tag in recipe.tags) {
@@ -32,7 +33,6 @@ class TagMenu extends Component {
           }
         });
       });
-      console.log(tagRows)
     });
 
     for (var key in tagRows) {
@@ -53,6 +53,8 @@ class TagMenu extends Component {
       });
     }
 
+    // this.props.filterTags.forEach((tag) => console.log(tag));
+    console.log(this.props.filterTags)
     return (
       <div id="filterpane">
         <table>
@@ -63,20 +65,6 @@ class TagMenu extends Component {
           </thead>
           <tbody>{rows}</tbody>
         </table>
-
-
-
-
-        <p>Filter your results:</p>
-        <p>Type of meal</p>
-        <ul>
-          <a onClick={() => this.props.tagClickFilter(this.props.filterByTag("size", "snack"))}>
-            Snack ({this.props.filterByTag("size", "snack").length})
-          </a>
-
-          <li>Main ({this.props.filterByTag("size", "main").length})</li>
-          <li>Side ({this.props.filterByTag("size", "side").length})</li>
-        </ul>
       </div>
     )
   }
