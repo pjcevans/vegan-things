@@ -8,13 +8,7 @@ const TagRow = (props) =>
 
 export default TagRow
 
-// all hovers for filters should be point-selectors
-
-// Implement checkbox filtering. Checkboxes should be
-// clickable to add a filter. Ideally we can stack
-// filters but for now just clear filter and go back
-// to search results when one is checked off.
-// When a new one is checked, check off the other &
-// revert to search data (by using a parameterless call
-// to trigger the default behaviour which is set to
-// the "last (ie pre-trigger) state"
+// The call to: ({props.filterByTag(props.item).length}) is extremely
+// inefficient as it is called for each tag item. It would be much
+// better to populate tag numbers as top level state and pass them
+// down rather than having a component call functions

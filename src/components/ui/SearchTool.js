@@ -85,8 +85,6 @@ class SearchTool extends Component {
           }
       )
     }
-    // solve the problem that after searching is finished, we dont get the full list
-
     // Further filter the current dataset based on each tag
     // If updateGallery is called with updated tag data
     if (newTagData.length !== 0) {
@@ -94,13 +92,6 @@ class SearchTool extends Component {
         newSeachedRecipes = this.filterByTag(tag, newSeachedRecipes);
       });
     }
-    // else { // Or using existing selected tags if not called with updated tag data
-    //   if (this.state.filterTags.length !== 0) {
-    //     this.state.filterTags.forEach((tag) => {
-    //       newSeachedRecipes = this.filterByTag(tag, newSeachedRecipes);
-    //     });
-    //   }
-    // }
 
 
     this.setState({

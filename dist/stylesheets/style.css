@@ -67,6 +67,7 @@ margin: 10px;
 }
 
 .normal {
+  cursor: pointer;
   color: blue;
 }
 
@@ -85,6 +86,7 @@ margin: 10px;
 }
 
 .close {
+  cursor: pointer;
   color: red;
 }
 
