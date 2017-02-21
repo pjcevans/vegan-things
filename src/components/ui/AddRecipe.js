@@ -1,6 +1,5 @@
-import MainMenu from './MainMenu'
 
-const Home = () =>
+const AddRecipe = () =>
     <div className="page">
         <MainMenu />
         <div>
@@ -8,4 +7,4 @@ const Home = () =>
         </div>
     </div>
 
-export default Home
+export default AddRecipe
