@@ -7,7 +7,7 @@ const Recipe = (props) =>
       <img key={id} src={image.url} height="160" width="160"/>
     ) : undefined
     )}
-    <h4>{props.item.name}</h4>
+    <h4><a href={"#/recipes/" + props.item.id}>{props.item.name}</a></h4>
   </div>
 
 

@@ -4,7 +4,8 @@ const Home = () =>
     <div className="page">
         <MainMenu />
         <div>
-            <h1>ffReact testing zone</h1>
+            <h1>React testing zone</h1>
+            <p>test</p>
         </div>
     </div>
 
