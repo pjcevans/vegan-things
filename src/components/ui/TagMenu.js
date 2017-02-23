@@ -98,17 +98,3 @@ class TagMenu extends Component {
 }
 
 export default TagMenu
-
-
-      // {
-      // props.recipes.forEach((recipe) => {
-      //   <p>{recipe.name}</p>
-      //   <ul>
-      //   for (var tag in recipe.tags) {
-      //     recipe.tags[tag].forEach((item) => {
-      //       <li>{item}</li>
-      //     });
-      //   };
-      //   </ul>
-      // });
-      // }

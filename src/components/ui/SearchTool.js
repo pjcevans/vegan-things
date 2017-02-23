@@ -35,9 +35,6 @@ class SearchTool extends Component {
           if (recipe.tags[key].indexOf(tag) > -1) {
             match = true;
           }
-          // recipe.tags[key].forEach((type) => {
-          //   return indexOf(tag) > -1
-          // });
         }
         return match;
     });
@@ -64,11 +61,6 @@ class SearchTool extends Component {
       newTagData.push(tag)
     }
     this.updateGallery(newTagData);
-    // this.setState({
-    //   filterTags: newTagData
-    // }, () => {
-    //   this.updateGallery();
-    // });
   }
 
   updateGallery(newTagData = this.state.filterTags) {
@@ -156,8 +148,3 @@ class SearchTool extends Component {
 }
 
 export default SearchTool
-
-
-        // for (var prop in obj) {
-        //   console.log('obj.' + prop, '=', obj[prop]);
-        // }

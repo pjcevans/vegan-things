@@ -14,12 +14,3 @@ const Recipe = (props) =>
 
 
 export default Recipe
-
-// <div>
-// Ingredients list:
-// <ul>
-//   {props.item.ingredients.map( ingredient =>
-//     <li key="ingredient.type">{ingredient.quantity} {ingredient.unit} of {ingredient.type}</li>
-//   )}
-// </ul>
-// </div>

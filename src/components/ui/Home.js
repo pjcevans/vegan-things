@@ -5,7 +5,6 @@ const Home = () =>
         <MainMenu />
         <div>
             <h1>React testing zone</h1>
-            <p>test</p>
         </div>
     </div>
 
