@@ -5,7 +5,6 @@ import SearchPage from './components/ui/SearchPage'
 import Gallery from './components/ui/Gallery'
 import AddRecipe from './components/ui/AddRecipe'
 import RecipeFullPage from './components/ui/RecipeFullPage'
-import myData from '../../testdata/recipes.json';
 
 import  { Main, Whoops404  } from './components'
 
@@ -17,7 +16,7 @@ const routes = (
           <Route path="search" component={SearchPage} />
           <Route path="gallery" component={Gallery} />
           <Route path="input" component={AddRecipe} />
-          <Route path="/recipes/:recipesId" component={RecipeFullPage} />
+          <Route path="/recipes/:recipeId" component={RecipeFullPage}/>
 
         </Route>
 

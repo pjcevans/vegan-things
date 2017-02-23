@@ -1,7 +1,51 @@
+import { Component } from 'react'
+import myData from '../../testdata/recipes.json';
 
-const RecipeFullPage = (props) =>
-  <div>
-    <h3>This is the page for recipe number {props.params.recipesId}</h3>
-  </div>
+class RecipeFullPage extends Component {
+  constructor(props) {
+      super(props)
+  }
+
+  render() {
+    // Picks the data for the current recipe id
+    var recipe = myData.items.find(x => x.id === parseInt(this.props.params.recipeId))
+    return (
+      <div >
+        <h2>{recipe.name}<span className="postscript"> - added {recipe.date}</span></h2>
+        <div id="recipefullpageblock">
+
+          <div>
+          {recipe.images.map( (image, id) =>
+            (image.type === "banner") ? (
+            <img key={id} src={image.url} height="500" width="500"/>
+          ) : undefined
+          )}
+          </div>
+
+          <div>
+            <h3>This recipe:</h3>
+            <p>{recipe.blurb}</p>
+            <h3>Ingredients:</h3>
+            <ul>
+              {recipe.ingredients.map( (ingredient, id) =>
+                <li key={id}>{ingredient.quantity + " " + ingredient.unit + " " + ingredient.type}</li>
+              )}
+            </ul>
+            <h3>Method:</h3>
+            <ul>
+              {recipe.method.map( (step, id) =>
+                <li key={id}>{step}</li>
+              )}
+            </ul>
+
+          </div>
+
+
+        </div>
+      </div>
+    )
+ }
+}
+
 
 export default RecipeFullPage

@@ -93,3 +93,12 @@ margin: 10px;
 #rightcontent {
   flex-grow: 1;
 }
+
+#recipefullpageblock {
+  display: flex;
+}
+
+.postscript {
+  color: gray;
+  font-size: medium;
+}
