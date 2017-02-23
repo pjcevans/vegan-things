@@ -1,5 +1,8 @@
 import { Component } from 'react'
 import myData from '../../testdata/recipes.json';
+// Using data imported from the file on each recipe page is fubar,
+// this should be done by passing data to the component or by redux
+
 
 class RecipeFullPage extends Component {
   constructor(props) {
