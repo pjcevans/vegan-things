@@ -5,14 +5,12 @@ Testing various things:
 - Props, State, all the react fun
 - JSON API mocking
 
-To run locally:
-- delete existing bundle.js from public folder (enables hot-reloading for some reason!)
-- requires npm / webpack
+To run locally with hot reloading + auto page reload:
+- requires npm / webpack-dev-server (installed globally npm install -g webpack-dev-server)
 - npm install
-- npm start
+- npm run dev
 
 to test locally with heroku:
-- delete existing bundle.js from public folder (enables hot-reloading for some reason!)
 - requires heroku toolbelt / npm / webpack
 - npm install
 - heroku local web
