@@ -1,24 +1,29 @@
 {
   "items": [
     {
-      "name": "Fritters",
-      "blurb": "It's a real tasty thingie! Possibly the blurb snippet could just be the first x characters of recipe text?",
+      "name": "Hot Courgette Fritters",
+      "blurb": "Fritters can be made from almost any vegetable, these are particularly cheap though, especially if someone you know is having a glut of marrows",
       "id": 1,
       "date": "06/02/2017",
       "ingredients": [
         {
           "quantity": 4,
-          "unit": "grams",
-          "type": "sugar"
+          "unit": "Grams",
+          "type": "salt"
         },
         {
           "quantity": 4,
-          "unit": "normal size fruit",
+          "unit": "Normal size",
           "type": "Courgette"
         },
         {
+          "quantity": 1,
+          "unit": "Spoon",
+          "type": "Cayenne Pepper"
+        },
+        {
           "quantity": 2,
-          "unit": "cups",
+          "unit": "Cups",
           "type": "Plain White Flour"
         }
       ],
@@ -33,11 +38,11 @@
         }
       ],
       "method": [
-        "Step 1",
-        "Step 2",
-        "Step 3",
-        "Step 4",
-        "Step 5"
+        "Peel Courgettes if they are large and tough skinned",
+        "Shred the Courgette flesh with a shredder or a grater",
+        "Mix in the salt and half the flour",
+        "Squish into pattys, add flour until they stick together",
+        "Fry in a small amount of oil on a high temperature until browned"
       ],
       "tags": {
         "taste": [

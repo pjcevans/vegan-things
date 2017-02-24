@@ -97,6 +97,12 @@ margin: 10px;
 #recipefullpageblock {
   display: flex;
 }
+#recipefullpagetext > ul {
+  list-style: none;
+  text-align: left;
+  margin-left: 40px;
+}
+
 
 .postscript {
   color: gray;

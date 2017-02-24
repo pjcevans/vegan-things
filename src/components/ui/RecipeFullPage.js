@@ -25,7 +25,7 @@ class RecipeFullPage extends Component {
           )}
           </div>
 
-          <div>
+          <div id="recipefullpagetext">
             <h3>This recipe:</h3>
             <p>{recipe.blurb}</p>
             <h3>Ingredients:</h3>
@@ -37,7 +37,7 @@ class RecipeFullPage extends Component {
             <h3>Method:</h3>
             <ul>
               {recipe.method.map( (step, id) =>
-                <li key={id}>{step}</li>
+                <li key={id}>Step {id + 1}: {step}</li>
               )}
             </ul>
 
