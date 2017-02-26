@@ -6,7 +6,7 @@ Testing various things:
 - JSON API mocking
 
 To run locally with hot reloading + auto page reload:
-- requires npm / webpack-dev-server (installed globally npm install -g webpack-dev-server)
+- requires npm / webpack-dev-server
 - npm install
 - npm run dev
 

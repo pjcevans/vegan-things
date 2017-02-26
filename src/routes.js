@@ -17,7 +17,6 @@ const routes = (
           <Route path="gallery" component={Gallery} />
           <Route path="input" component={AddRecipe} />
           <Route path="/recipes/:recipeId" component={RecipeFullPage}/>
-
         </Route>
 
 
