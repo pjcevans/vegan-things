@@ -108,3 +108,46 @@ margin: 10px;
   color: gray;
   font-size: medium;
 }
+
+.active {
+  transition: all 0.5s;
+  opacity: 1;
+  width: 100%;
+  height: 300px;
+}
+
+.inactive {
+  transition: all 0.5s;
+  opacity: 0;
+  width: 0%;
+  height: 300px;
+}
+
+#slider {
+  display: flex;
+  width: 100%;
+}
+
+#slider > button {
+  border: none;
+  background: white;
+}
+
+#slider > button:hover {
+  background: #d5f6e3;
+}
+
+#sliderOuter {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+#sliderInner {
+  display: block;
+  position: absolute;
+  transition: all 0.5s;
+}
+
