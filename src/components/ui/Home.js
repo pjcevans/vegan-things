@@ -11,7 +11,9 @@ const Home = () => {
 		let images = item.images.filter((image) => {
 			return image.type === "banner"
 		});
-		return {id:item.id,url:images[0].url}
+		let url = require('../../images/' + images[0].url)
+		console.log(url)
+		return {id:item.id,url:url}
 	});
 
 
@@ -25,7 +27,7 @@ const Home = () => {
 	        <div>
 	            <h1>React testing zone</h1>
 	            <Slider sliderImages={sliderImages}
-	            		sliderInterval={7000}/>
+	            		sliderInterval={4000}/>
 	        </div>
 	    </div>
     )
