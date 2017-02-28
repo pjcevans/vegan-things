@@ -6,6 +6,7 @@ class Slider extends Component {
   // This component takes an array of images {sliderImages} and image metadata in object format,
   // with the properties "id" and "url" the component renders this array in a content slider. 
   // Interval at which the content slider transitions is passed down in ms {sliderInterval}
+  // -- could add media query to center images on mobile
   constructor(props) {
       super(props)
       this.state = {
