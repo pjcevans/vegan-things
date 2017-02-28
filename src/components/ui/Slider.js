@@ -69,7 +69,6 @@ class Slider extends Component {
 
 
   render() {
-    console.log(this.props.sliderImages.length)
     var images = this.props.sliderImages.map((item) => {
       return <img key={item.id} src={item.url} />
     });
