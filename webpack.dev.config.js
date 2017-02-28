@@ -16,6 +16,7 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
 
@@ -25,16 +26,13 @@ module.exports = {
         loader: 'babel',
         include: path.join(__dirname, 'src')
       },
-      { test: /\.(png|jpg)$/, 
-        loader: 'url-loader?limit=8192' 
-      },
       { test: /\.scss?$/,
         loader: 'style!css!sass',
         include: path.join(__dirname, 'src', 'styles') },
       { test: /\.css$/,
         loader: 'style!css!sass',
         include: path.join(__dirname, 'src', 'styles') },
-      { test: /\.png$/,
+      { test: /\.png|.jpg$/,
         loader: 'file' },
       { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
         loader: 'file'},
@@ -43,6 +41,3 @@ module.exports = {
     ]
   }
 }
-
-//    new webpack.HotModuleReplacementPlugin(),
-
