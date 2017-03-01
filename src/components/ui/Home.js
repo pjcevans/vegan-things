@@ -23,11 +23,13 @@ const Home = () => {
 	//             					   {id:3,url:"http://www.foodintour.com/wp-content/uploads/2016/01/tumblr_myktv7HLhY1svn89to1_1280.jpg"}]
 	return (
 	    <div className="page">
+	    	<div id="title-icon">
+	    	Vegan <br /> Things
+	    	</div>
 	        <MainMenu />
 	        <div>
-	            <h1>React testing zone</h1>
 	            <Slider sliderImages={sliderImages}
-	            		sliderInterval={4000}/>
+	            		sliderInterval={2000}/>
 	        </div>
 	    </div>
     )
