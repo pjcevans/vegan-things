@@ -69,9 +69,13 @@ class Slider extends Component {
 
 
   render() {
-    var images = this.props.sliderImages.map((item) => {
-      return <img key={item.id} src={item.url} />
-    });
+    var images = this.props.sliderImages.map((item, i) => {
+      var sliderActive = "inactive";
+      if (i === this.state.sliderPosition) {
+        sliderActive = "active";
+      }
+      return <a key={item.id} href={"#/recipes/" + item.id}><img src={item.url} className={sliderActive} /></a>
+    })
 
 
     return (
@@ -79,16 +83,7 @@ class Slider extends Component {
       <div id="sliderOuter">
         <button onClick={() => this.slideLeft()} ><FaLeft /></button>
         <div id="sliderInner">
-         {
-          this.props.sliderImages.map((item, i) => {
-            var sliderActive = "inactive";
-            if (i === this.state.sliderPosition) {
-              sliderActive = "active";
-            }
-            return <a key={item.id} href={"#/recipes/" + item.id}><img src={item.url} className={sliderActive} /></a>
-          })
-         }
-
+          { images }
         </div>
         <button onClick={() => this.slideRight()} ><FaRight /></button>
       </div>

@@ -11,7 +11,9 @@ class RecipeFullPage extends Component {
 
   render() {
     // Picks the data for the current recipe id
-    var recipe = myData.items.find(x => x.id === parseInt(this.props.params.recipeId))
+    console.log(this.props.hasOwnProperty("params"))
+    var thisRecipe = (this.props.hasOwnProperty("params")) ? this.props.params.recipeId : this.props.recipeId
+    var recipe = myData.items.find(x => x.id === parseInt(thisRecipe))
     return (
       <div >
         <h2>{recipe.name}<span className="postscript"> - added {recipe.date}</span></h2>

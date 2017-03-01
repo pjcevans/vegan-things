@@ -1,6 +1,8 @@
 import MainMenu from './MainMenu'
 import Slider from './Slider'
 import myData from '../../testdata/recipes.json';
+import RecipeFullPage from './RecipeFullPage'
+
 
 const Home = () => {
 	var imageCount = 0;
@@ -29,8 +31,9 @@ const Home = () => {
 	        <MainMenu />
 	        <div>
 	            <Slider sliderImages={sliderImages}
-	            		sliderInterval={2000}/>
+	            		sliderInterval={4000}/>
 	        </div>
+	        <RecipeFullPage recipeId={"1"} />
 	    </div>
     )
 }
