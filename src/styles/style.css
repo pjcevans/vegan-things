@@ -3,6 +3,7 @@ html, body {
     text-align: center;
     min-width: 100%;
     margin: 0;
+
 }
 
  
@@ -119,26 +120,16 @@ margin: 10px;
 
 /*Slider CSS*/
 .active {
-/*  transition: opacity 0s, width 0.5s, height 0s;
+  transition: opacity 0s, width 0.5s, height 0s;
   opacity: 1;
-  width: 100%;*/
-
-  transition: left 0.5s, opacity 0.5s;
-  left: 0px;
-  opacity: 1;
+  width: 100%;
 }
 /* Having the inactive class set to 0 opacity and width means that
 during the transition it will both shrink and disappear */
 .inactive {
-/*  transition: opacity 0s, width 0.5s;
+  transition: opacity 0s, width 0.5s;
   opacity: 0;
-  width: 0%;*/
-
-  transition: left 0.5s, opacity 0.5s;
-  left: 1000px;
-  opacity: 0;
-
-
+  width: 0%;
 }
 
 

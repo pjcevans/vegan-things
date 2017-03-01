@@ -85,7 +85,7 @@ class Slider extends Component {
             if (i === this.state.sliderPosition) {
               sliderActive = "active";
             }
-            return <a key={item.id} href={"#/recipes/" + item.id} className={sliderActive}><img src={item.url} /></a>
+            return <a key={item.id} href={"#/recipes/" + item.id}><img src={item.url} className={sliderActive} /></a>
           })
          }
 
