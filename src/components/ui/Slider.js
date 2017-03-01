@@ -76,8 +76,8 @@ class Slider extends Component {
 
     return (
     <div id="slider">
-      <button onClick={() => this.slideLeft()} ><FaLeft /></button>
       <div id="sliderOuter">
+        <button onClick={() => this.slideLeft()} ><FaLeft /></button>
         <div id="sliderInner">
          {
           this.props.sliderImages.map((item, i) => {
@@ -90,8 +90,8 @@ class Slider extends Component {
          }
 
         </div>
+        <button onClick={() => this.slideRight()} ><FaRight /></button>
       </div>
-      <button onClick={() => this.slideRight()} ><FaRight /></button>
     </div>
   )
  }
