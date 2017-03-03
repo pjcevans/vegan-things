@@ -29,4 +29,4 @@ Areas under development:
 
 Development Notes:
 =====================
-- As in this thread, using both hot module replacement and -hot switch of webpack dev server causes recursive updates & stackoverflow. Opted to use the plugin over the -hot switch http://stackoverflow.com/questions/32716885/maximum-call-stack-exceeded-error-in-reactjs-can-someone-help-explain-whats-go
+- As in this thread, using both hot module replacement and -hot switch of webpack dev server causes recursive updates & stack overflow. Opted to use the plugin over the -hot switch http://stackoverflow.com/questions/32716885/maximum-call-stack-exceeded-error-in-reactjs-can-someone-help-explain-whats-go
