@@ -4,7 +4,7 @@ import FaRight from 'react-icons/lib/fa/chevron-right'
 
 class Slider extends Component {
   // This component takes an array of images {sliderImages} and image metadata in object format,
-  // with the properties "id" and "url" the component renders this array in a content slider. 
+  // with the properties "id" and "url" the component renders this array in a content slider.
   // Interval at which the content slider transitions is passed down in ms {sliderInterval}
   // -- could add media query to center images on mobile
   constructor(props) {
@@ -37,12 +37,12 @@ class Slider extends Component {
       this.setState({
         sliderPosition: this.props.sliderImages.length - 1,
         intervalId: intervalId
-      }); 
+      });
     } else {
       this.setState({
         sliderPosition: this.state.sliderPosition - 1,
         intervalId: intervalId
-      });  
+      });
     }
 
   }
@@ -54,12 +54,12 @@ class Slider extends Component {
       this.setState({
         sliderPosition: 0,
         intervalId: intervalId
-      }); 
+      });
     } else {
       this.setState({
         sliderPosition: this.state.sliderPosition + 1,
         intervalId: intervalId
-      });  
+      });
     }
   }
 

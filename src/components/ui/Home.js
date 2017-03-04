@@ -3,6 +3,8 @@ import Slider from './Slider'
 import myData from '../../testdata/recipes.json';
 import RecipeFullPage from './RecipeFullPage'
 import { Component } from 'react'
+import ReactDOM from 'react-dom'
+import HomeShowRecipe from './HomeShowRecipe'
 
 
 class Home extends Component {
@@ -12,6 +14,26 @@ class Home extends Component {
       this.state = {
         currentRecipe: 1
       }
+  }
+
+  scrollToBottom = () => {
+    const node = ReactDOM.findDOMNode(this.finalItem);
+    console.log("hi!")
+    node.scrollIntoView({behavior: "smooth"});
+  }
+
+  showAnotherRecipe() {
+    console.log(this.state.currentRecipe, myData.items.length)
+    // after a new recipe has been added scroll to the bottom
+    if (this.state.currentRecipe < myData.items.length -1) {
+      this.setState({
+        currentRecipe: this.state.currentRecipe + 1
+      }, () => {
+        this.scrollToBottom();
+      });
+    } else {
+      console.log("end of the list")
+    }
   }
 
 
@@ -30,11 +52,21 @@ class Home extends Component {
 
 	var contentItems = []
 	for (let i = 0; i <= this.state.currentRecipe; i++) {
-		var visibleClass = "content-shown";
 		if (i === this.state.currentRecipe) {
-			visibleClass = "content-hidden";
-		}
-		contentItems.push(<RecipeFullPage visibleClass={visibleClass} key={i} recipeId={i + 1} />)
+			var visibleClass = "content-hidden";
+      contentItems.push(<HomeShowRecipe key={i + "submit"}
+                                        showAnotherRecipe={this.showAnotherRecipe.bind(this)} />)
+      // Final item on page passed ref in order to enable scrolling to that component
+      contentItems.push(<RecipeFullPage visibleClass={visibleClass}
+                                        key={i}
+                                        recipeId={i + 1} />)
+		} else {
+      var visibleClass = "content-shown";
+      contentItems.push(<RecipeFullPage visibleClass={visibleClass}
+                                        key={i}
+                                        recipeId={i + 1} />)
+    }
+
 	}
 
 	return (
@@ -48,7 +80,10 @@ class Home extends Component {
 	            		sliderInterval={4000}/>
 	        </div>
 	        {contentItems}
-	        hi
+          <div></div>
+          <div style={ {float:"left", clear: "both", height: "150px"} }
+                ref={(a) => { this.finalItem = a; }}>
+          </div>
 	    </div>
     )
   }
