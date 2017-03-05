@@ -132,6 +132,10 @@ during the transition it will both shrink and disappear */
   background: #d5f6e3;
 }
 
+#slider > div > button:focus {
+  outline: 0;
+}
+
 /* The intention with slider inner / outer is to make the slider's
 height adjust comparatively to the width, allowing smaller height
 on small screens without using media queries */
@@ -170,9 +174,26 @@ large screens that the height will expand past the slider */
   padding-right: 3%;
 }
 
-.show-next-item-button {
+.show-next-block {
   flex-basis: 100%;
 }
+
+.show-next-button {
+  border: none;
+  background: white;
+  font-size: large;
+  font-family: Arial italic;
+  margin: 1%;
+}
+
+.show-next-button:hover {
+  background: #d5f6e3;
+}
+
+.show-next-button:focus {
+  outline: 0;
+}
+
 .content-shown {
   transition: opacity 1.2s ease-in-out;
   opacity: 1;
