@@ -10,10 +10,7 @@ class Slider extends Component {
   constructor(props) {
       super(props)
       this.state = {
-        sliderPosition: 0,
-        firstImage: "active",
-        secondImage: "inactive",
-        thirdImage: "inactive"
+        sliderPosition: 0
       }
   }
 
@@ -74,7 +71,7 @@ class Slider extends Component {
       if (i === this.state.sliderPosition) {
         sliderActive = "active";
       }
-      return <a key={item.id} href={"#/recipes/" + item.id}><img src={item.url} className={sliderActive} /></a>
+      return <a key={item.id} href={"#/recipes/" + item.id} className={sliderActive}><img src={item.url} className={sliderActive} /></a>
     })
 
 

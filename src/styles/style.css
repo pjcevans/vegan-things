@@ -106,6 +106,12 @@ margin: 10px;
 #recipefullpageblock {
   display: flex;
 }
+
+#recipefullpageblock > div > img {
+  min-height: 150px;
+  max-width: 250px;
+}
+
 #recipefullpagetext > ul {
   list-style: none;
   text-align: left;
@@ -119,19 +125,23 @@ margin: 10px;
 
 /*Slider CSS*/
 .active {
-  transition: opacity 0s, width 0.5s, height 0s;
+  transition: opacity 3s, width 0.5s, order 1s, padding-left 1s;
   opacity: 1;
   width: 100%;
+  order: -1;
+  flex-shrink: 0;
+  padding-left: 0;
 }
 /* Having the inactive class set to 0 opacity and width means that
 during the transition it will both shrink and disappear */
 .inactive {
-  transition: opacity 0s, width 0.5s;
-  opacity: 0;
-  width: 0%;
+  transition: opacity 3s, width 0.5s, order 1s, padding-left 1s;
+  opacity: 0.6;
+  width: 100%;
+  order: 2;
+  padding-left: 10px;
+
 }
-
-
 
 /* Styling for the skip left and right slider buttons */
 #slider > div > button {
@@ -156,6 +166,8 @@ on small screens without using media queries */
 as this is a percentage based on the width it's possible that on very
 large screens that the height will expand past the slider */
 #sliderInner {
+  display: flex;
+  flex-wrap: nowrap;
   padding-bottom: 18%;
   max-height: 5%;
 }
@@ -173,10 +185,11 @@ large screens that the height will expand past the slider */
 }
 
 .content-shown {
-  transition: opacity 1.2s ease-in-out 0.1s;
+  transition: opacity 1.2s ease-in-out;
   max-height: 600px;
   opacity: 1;
 }
+
 
 .content-hidden {
   background: green;

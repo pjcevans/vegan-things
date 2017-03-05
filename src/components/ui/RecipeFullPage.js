@@ -23,7 +23,8 @@ class RecipeFullPage extends Component {
           <div>
           {recipe.images.map( (image, id) =>
             (image.type === "banner") ? (
-            <img key={id} src={image.url} height="500" width="500"/>
+
+            <img key={id} src={require("../../images/" + image.url)} />
           ) : undefined
           )}
           </div>
