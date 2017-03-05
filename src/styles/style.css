@@ -125,7 +125,7 @@ margin: 10px;
 
 /*Slider CSS*/
 .active {
-  transition: opacity 3s, width 0.5s, order 1s, padding-left 1s;
+  transition: opacity 3s, padding-left 1s;
   opacity: 1;
   width: 100%;
   order: -1;
@@ -135,7 +135,7 @@ margin: 10px;
 /* Having the inactive class set to 0 opacity and width means that
 during the transition it will both shrink and disappear */
 .inactive {
-  transition: opacity 3s, width 0.5s, order 1s, padding-left 1s;
+  transition: opacity 3s, padding-left 1s;
   opacity: 0.6;
   width: 100%;
   order: 2;
@@ -170,6 +170,7 @@ large screens that the height will expand past the slider */
   flex-wrap: nowrap;
   padding-bottom: 18%;
   max-height: 5%;
+  overflow: hidden;
 }
 
 
