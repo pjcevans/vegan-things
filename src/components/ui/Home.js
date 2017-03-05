@@ -18,12 +18,10 @@ class Home extends Component {
 
   scrollToBottom = () => {
     const node = ReactDOM.findDOMNode(this.finalItem);
-    console.log("hi!")
     node.scrollIntoView({behavior: "smooth"});
   }
 
   showAnotherRecipe() {
-    console.log(this.state.currentRecipe, myData.items.length)
     // after a new recipe has been added scroll to the bottom
     if (this.state.currentRecipe < myData.items.length -1) {
       this.setState({
@@ -32,7 +30,6 @@ class Home extends Component {
         this.scrollToBottom();
       });
     } else {
-      console.log("end of the list")
     }
   }
 
@@ -79,9 +76,11 @@ class Home extends Component {
 	            <Slider sliderImages={sliderImages}
 	            		sliderInterval={4000}/>
 	        </div>
-	        {contentItems}
+          <div className="content-list">
+  	        {contentItems}
+          </div>
           <div></div>
-          <div style={ {float:"left", clear: "both", height: "150px"} }
+          <div style={ {height: "1px", width: "70%"} }
                 ref={(a) => { this.finalItem = a; }}>
           </div>
 	    </div>

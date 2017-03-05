@@ -22,14 +22,14 @@ class RecipeFullPage extends Component {
 
           <div>
           {recipe.images.map( (image, id) =>
-            (image.type === "banner") ? (
+            (image.type === "main") ? (
 
             <img key={id} src={require("../../images/" + image.url)} />
           ) : undefined
           )}
           </div>
 
-          <div id="recipefullpagetext">
+          <div className="recipe-fullpage-text">
             <h3>This recipe:</h3>
             <p>{recipe.blurb}</p>
             <h3>Ingredients:</h3>

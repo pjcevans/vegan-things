@@ -4,7 +4,7 @@ const Recipe = (props) =>
   <div className="reciperesult">
     {props.item.images.map( (image, id) =>
       (image.type === "main") ? (
-      <a key={id} href={"#/recipes/" + props.item.id}><img key={id} src={image.url} height="160" width="160"/></a>
+      <a key={id} href={"#/recipes/" + props.item.id}>{}<img key={id} src={require("../../images/" + image.url)} height="160" width="160"/></a>
     ) : undefined
     )}
     <h4><a href={"#/recipes/" + props.item.id}>{props.item.name}</a></h4>

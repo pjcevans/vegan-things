@@ -99,29 +99,7 @@ margin: 10px;
   color: red;
 }
 
-#rightcontent {
-  flex-grow: 1;
-}
 
-#recipefullpageblock {
-  display: flex;
-}
-
-#recipefullpageblock > div > img {
-  min-height: 150px;
-  max-width: 250px;
-}
-
-#recipefullpagetext > ul {
-  list-style: none;
-  text-align: left;
-  margin-left: 40px;
-}
-
-.postscript {
-  color: gray;
-  font-size: medium;
-}
 
 /*Slider CSS*/
 .active {
@@ -147,6 +125,7 @@ during the transition it will both shrink and disappear */
 #slider > div > button {
   border: none;
   background: white;
+  flex-shrink: 0;
 }
 
 #slider > div > button:hover {
@@ -185,10 +164,19 @@ large screens that the height will expand past the slider */
   font-family: Arial italic;
 }
 
+/*Styles for homepage content blocks*/
+.content-list {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.show-next-item-button {
+  flex-basis: 100%;
+}
 .content-shown {
   transition: opacity 1.2s ease-in-out;
-  max-height: 600px;
   opacity: 1;
+  flex-wrap: wrap;
 }
 
 
@@ -197,4 +185,37 @@ large screens that the height will expand past the slider */
   max-height: 0px;
   overflow: hidden;
   opacity: 0;
+}
+
+#rightcontent {
+  flex-grow: 1;
+}
+
+#recipefullpageblock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.recipe-fullpage-text {
+  max-width: 400px;
+}
+
+.recipe-fullpage-text  > p {
+  margin-left: 5%;
+}
+
+#recipefullpageblock > div > img {
+  min-height: 350px;
+  max-width: 350px;
+}
+
+.recipe-fullpage-text > ul {
+  list-style: none;
+  text-align: left;
+}
+
+.postscript {
+  color: gray;
+  font-size: medium;
 }
