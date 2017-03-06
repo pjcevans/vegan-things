@@ -17,6 +17,7 @@ class Home extends Component {
   }
 
   scrollToBottom = () => {
+    // Final item on page passed ref 'finalItem' in order to enable scrolling to that component
     const node = ReactDOM.findDOMNode(this.finalItem);
     node.scrollIntoView({behavior: "smooth"});
   }
@@ -48,22 +49,33 @@ class Home extends Component {
 	});
 
 	var contentItems = []
+	// Adds a component for each recipe in myData up to the number of times 
+	// Show another recipe has been clicked plus one. One recipe more should 
+	// be present but hidden to allow more responsiveness.
 	for (let i = 0; i <= this.state.currentRecipe; i++) {
+		// When the last recipe to be currently shown has been reached
 		if (i === this.state.currentRecipe) {
-			var visibleClass = "content-hidden";
-      contentItems.push(<HomeShowRecipe key={i + "submit"}
-                                        showAnotherRecipe={this.showAnotherRecipe.bind(this)} />)
-      // Final item on page passed ref in order to enable scrolling to that component
-      contentItems.push(<RecipeFullPage visibleClass={visibleClass}
-                                        key={i}
-                                        recipeId={i + 1} />)
+		  var visibleClass = "content-hidden";
+		  // When that recipe is also the last recipe in the set
+		  if (this.state.currentRecipe === myData.items.length -1) {
+	      contentItems.push(<RecipeFullPage visibleClass={"content-shown"}
+	                                        key={i}
+	                                        recipeId={i + 1} />)
+	    // When the recipe is the last to currently show but not the last in the set
+      } else {
+      	contentItems.push(<HomeShowRecipe key={i + "submit"}
+	                                        showAnotherRecipe={this.showAnotherRecipe.bind(this)} />)
+	      contentItems.push(<RecipeFullPage visibleClass={visibleClass}
+	                                        key={i}
+	                                        recipeId={i + 1} />)
+      }
+      // when the recipe to be shown is not the last to be shown or the last in the set
 		} else {
       var visibleClass = "content-shown";
       contentItems.push(<RecipeFullPage visibleClass={visibleClass}
                                         key={i}
                                         recipeId={i + 1} />)
     }
-
 	}
 
 	return (
