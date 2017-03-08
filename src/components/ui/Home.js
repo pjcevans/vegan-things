@@ -1,10 +1,9 @@
 import MainMenu from './MainMenu'
 import Slider from './Slider'
 import myData from '../../testdata/recipes.json';
-import RecipeFullPage from './RecipeFullPage'
 import { Component } from 'react'
 import ReactDOM from 'react-dom'
-import HomeShowRecipe from './HomeShowRecipe'
+import HomeContentItems from './HomeContentItems'
 
 
 class Home extends Component {
@@ -24,7 +23,7 @@ class Home extends Component {
 
   showAnotherRecipe() {
     // after a new recipe has been added scroll to the bottom
-    if (this.state.currentRecipe < myData.items.length -1) {
+    if (this.state.currentRecipe < myData.items.length) {
       this.setState({
         currentRecipe: this.state.currentRecipe + 1
       }, () => {
@@ -47,36 +46,8 @@ class Home extends Component {
 		let url = require('../../images/' + images[0].url)
 		return {id:item.id,url:url}
 	});
+	console.log()
 
-	var contentItems = []
-	// Adds a component for each recipe in myData up to the number of times 
-	// Show another recipe has been clicked plus one. One recipe more should 
-	// be present but hidden to allow more responsiveness.
-	for (let i = 0; i <= this.state.currentRecipe; i++) {
-		// When the last recipe to be currently shown has been reached
-		if (i === this.state.currentRecipe) {
-		  var visibleClass = "content-hidden";
-		  // When that recipe is also the last recipe in the set
-		  if (this.state.currentRecipe === myData.items.length -1) {
-	      contentItems.push(<RecipeFullPage visibleClass={"content-shown"}
-	                                        key={i}
-	                                        recipeId={i + 1} />)
-	    // When the recipe is the last to currently show but not the last in the set
-      } else {
-      	contentItems.push(<HomeShowRecipe key={i + "submit"}
-	                                        showAnotherRecipe={this.showAnotherRecipe.bind(this)} />)
-	      contentItems.push(<RecipeFullPage visibleClass={visibleClass}
-	                                        key={i}
-	                                        recipeId={i + 1} />)
-      }
-      // when the recipe to be shown is not the last to be shown or the last in the set
-		} else {
-      var visibleClass = "content-shown";
-      contentItems.push(<RecipeFullPage visibleClass={visibleClass}
-                                        key={i}
-                                        recipeId={i + 1} />)
-    }
-	}
 
 	return (
 	    <div className="page">
@@ -89,7 +60,9 @@ class Home extends Component {
 	            		sliderInterval={4000}/>
 	        </div>
           <div className="content-list">
-  	        {contentItems}
+  	        <HomeContentItems currentRecipe={this.state.currentRecipe}
+  	        									showAnotherRecipe={this.showAnotherRecipe.bind(this)}
+  	        									contentItems={myData.items.slice(0, this.state.currentRecipe + 1)} />
           </div>
           <div></div>
           <div style={ {height: "1px", width: "70%"} }
