@@ -5,7 +5,7 @@ import FaRight from 'react-icons/lib/fa/chevron-right'
 // them in order of `id` at a given interval.
 //
 // The component takes 2 props:
-// - An array of objects containing image paths and image metadata - sliderImages - each 
+// - An array of objects containing image paths and image metadata - sliderImages - each
 // image object has an `id` and a `url`.
 // - An interval passed in as ms - sliderInterval
 //
@@ -13,8 +13,8 @@ import FaRight from 'react-icons/lib/fa/chevron-right'
 // - Media queries could be used to position image content more logically on different screens
 //
 // Dev Notes:
-// - The slider was built to support the most recent release of Chrome and littler account
-// has been taken of other browsers or other versions, for example the most recent release 
+// - The slider was built to support the most recent release of Chrome and little account
+// has been taken of other browsers or other versions, for example the most recent release
 // of Firefox struggled with using padding as part of animating the slider's transition.
 
 
