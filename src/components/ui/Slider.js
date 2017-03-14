@@ -1,12 +1,25 @@
 import { Component } from 'react'
 import FaLeft from 'react-icons/lib/fa/chevron-left'
 import FaRight from 'react-icons/lib/fa/chevron-right'
+// This component renders an array of images into a content slider and transitions between
+// them in order of `id` at a given interval.
+//
+// The component takes 2 props:
+// - An array of objects containing image paths and image metadata - sliderImages - each 
+// image object has an `id` and a `url`.
+// - An interval passed in as ms - sliderInterval
+//
+// CSS Notes:
+// - Media queries could be used to position image content more logically on different screens
+//
+// Dev Notes:
+// - The slider was built to support the most recent release of Chrome and littler account
+// has been taken of other browsers or other versions, for example the most recent release 
+// of Firefox struggled with using padding as part of animating the slider's transition.
+
 
 class Slider extends Component {
-  // This component takes an array of images {sliderImages} and image metadata in object format,
-  // with the properties "id" and "url" the component renders this array in a content slider.
-  // Interval at which the content slider transitions is passed down in ms {sliderInterval}
-  // -- could add media query to center images on mobile
+
   constructor(props) {
       super(props)
       this.state = {
